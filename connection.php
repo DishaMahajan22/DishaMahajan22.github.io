@@ -24,6 +24,10 @@ $email_message .= "Telephone: ".($telephone)."\n";
 
 $email_message .= "Comments: "($comments)."\n";
 $headers = 'From: '.$email."\r\n";
-@mail($email_to, $email_sub, $msg, $headers);
+if (@mail($email_to, $email_sub, $msg, $headers)){
+    echo("message sent");
+}else{
+    echo("message not sent");
+}
 ?>
 Thank you for your response. I will reach out to you as soon as possible.
